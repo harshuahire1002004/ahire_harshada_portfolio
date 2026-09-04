@@ -69,7 +69,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[#E6F7F5] dark:bg-[#111A19] transition-colors">
+    <section id="contact" className="bg-[#E6F7F5] dark:bg-[#111A19] transition-colors scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="flex flex-col md:flex-row gap-16">
           {/* Left Content */}

@@ -5,7 +5,7 @@ import { Download } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex items-center border-b border-[#E0E0E0] dark:border-[#1F2A2B]">
+    <section id="home" className="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex items-center border-b border-[#E0E0E0] dark:border-[#1F2A2B] scroll-mt-20">
       <div className="flex flex-col md:flex-row items-center gap-12 w-full">
         {/* Left Content */}
         <div className="flex-1 space-y-6">

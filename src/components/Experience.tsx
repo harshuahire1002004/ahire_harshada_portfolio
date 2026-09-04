@@ -28,7 +28,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="max-w-6xl mx-auto px-6 py-20 border-b border-[#E0E0E0] dark:border-[#1F2A2B]">
+    <section id="experience" className="max-w-6xl mx-auto px-6 py-20 border-b border-[#E0E0E0] dark:border-[#1F2A2B] scroll-mt-20">
       <h2 className="text-3xl font-poppins font-bold text-primary-teal mb-10">
         Experience
       </h2>

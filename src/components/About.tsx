@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <section id="about" className="max-w-6xl mx-auto px-6 py-20 border-b border-[#E0E0E0] dark:border-[#1F2A2B]">
+    <section id="about" className="max-w-6xl mx-auto px-6 py-20 border-b border-[#E0E0E0] dark:border-[#1F2A2B] scroll-mt-20">
       <div className="flex flex-col md:flex-row items-center gap-16 w-full">
         {/* Left Content - Image */}
         <div className="w-full md:w-1/3 flex justify-center md:justify-start">
