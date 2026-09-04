@@ -58,7 +58,7 @@ export default function Projects() {
       solution: "Developed an interactive Power BI Sales Analytics Dashboard that consolidates key business KPIs and provides market, brand, category, regional, and time-based analysis. Interactive filters enable stakeholders to compare India and International markets and analyze performance by year, while KPI cards and visual analytics provide a quick view of revenue, profit, orders, quantity, and average order value.",
       impact: "The dashboard transforms complex sales data into an easy-to-understand decision-support tool, enabling stakeholders to quickly identify performance trends, top-performing brands, profitable categories, and regional opportunities for more informed business decisions.",
       keyMetrics: ["Revenue & Profit Margin %", "Order Volume & Quantity", "Average Order Value (AOV)", "Regional Market Share", "Brand Performance Matrix"],
-      tags: ["Power BI", "DAX", "Sales Analytics", "Data Modeling", "ETL"],
+      tags: ["Power BI", "DAX", "Sales Analytics", "Data Modeling", "ETL", "Power Query", "Data Validation", "Data Transformation", "KPI Analysis", "Filtering", "Data Connectivity"],
       link: "#projects"
     },
     {
@@ -71,7 +71,7 @@ export default function Projects() {
       solution: "I created a single interactive dashboard that brings all of this information together in an easy-to-understand format. Instead of going through multiple reports, users can see the overall business situation at a glance and then explore specific clients, salespersons, branches, orders, or time periods whenever more detail is needed.",
       impact: "The dashboard helps the business understand its clients better, recognize important sales trends, identify high-value customers, and keep track of outstanding payments. It also makes it easier for management to see where the business is performing well and where follow-up or attention may be needed.",
       keyMetrics: ["High-Value Clients", "Order Performance & Status", "Salesperson & Branch Activity", "Outstanding Payments & Invoices", "Client Trend Analysis"],
-      tags: ["Power BI", "Customer Analytics", "Accounts Receivable", "Sales Performance", "DAX"],
+      tags: ["Power BI", "Amazon Athena", "DAX Functions", "Power Query", "Data Transformation", "Data Validation", "UI/UX", "Excel", "Data Connectivity"],
       link: "#projects"
     },
     {
@@ -84,7 +84,7 @@ export default function Projects() {
       solution: "Built an interactive Tahweel Executive Summary Dashboard in Power BI that brings all key marketplace information into one clear view. The dashboard enables management to monitor overall trading activity, track trade progress, identify active buyers and sellers, analyze material categories, and compare performance across different Emirates and company types.",
       impact: "The dashboard provides management with a clearer picture of marketplace performance, helping them monitor ongoing activity, identify opportunities, and make faster, more informed business decisions with less manual effort.",
       keyMetrics: ["Trade Progress & Bid Volume", "Active Buyers & Sellers", "Emirates Regional Activity", "Material Category Breakdown", "Company Type Performance"],
-      tags: ["Power BI", "Marketplace Analytics", "B2B Trading", "Executive Reporting", "DAX"],
+      tags: ["Power BI", "DAX", "Marketplace Analytics", "B2B Trading", "PostgreSQL", "Executive Reporting", "Business Understanding", "Requirement Gathering"],
       link: "#projects"
     },
     {
@@ -97,7 +97,7 @@ export default function Projects() {
       solution: "An interactive Student Analytics Dashboard brings key academic information into a structured and easy-to-navigate view. It highlights important figures such as student enrollment, registered and booked students, campuses, programs, and modules, while allowing comparisons across campuses, modules, categories, and academic years.",
       impact: "The dashboard provides a clear picture of student participation and academic patterns. It helps management recognize high-demand modules, differences between campuses, yearly changes in program offerings, and areas requiring additional academic planning, supporting more effective resource allocation and decision-making.",
       keyMetrics: ["Student Enrollment & Bookings", "Registered vs Booked Students", "Campus-wise Variation", "Module & Program Demand", "Year-over-Year Academic Trends"],
-      tags: ["Power BI", "Academic Analytics", "Enrollment Tracking", "Higher Education", "Data Modeling"],
+      tags: ["Power BI", "DAX", "SQL Server", "Power Query", "Academic Analytics", "Data Modeling"],
       link: "#projects"
     }
   ];
