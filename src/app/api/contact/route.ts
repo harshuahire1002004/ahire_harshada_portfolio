@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY || "c2505b75-fe87-4e20-bd97-81e924d5cec9";
 
     // If access key is not set, return error so the admin knows it is missing in Vercel
     if (!accessKey || accessKey.trim() === "") {
