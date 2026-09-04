@@ -164,7 +164,7 @@ export default function Contact() {
                       type="text"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="e.g. Harshada Ahire"
+                      placeholder="e.g. Jane Doe"
                       disabled={status === "loading"}
                       className="w-full bg-[#FBFBFB] dark:bg-[#111A19] border border-[#E0E0E0] dark:border-[#1F2A2B] rounded-lg px-4 py-3 text-[14px] text-[#333333] dark:text-[#EAEAEA] placeholder:text-[#999999] focus:outline-none focus:border-primary-teal dark:focus:border-primary-teal transition-colors font-inter disabled:opacity-50"
                     />
@@ -180,7 +180,7 @@ export default function Contact() {
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="e.g. harsahada@example.com"
+                      placeholder="e.g. janedoe@example.com"
                       disabled={status === "loading"}
                       className="w-full bg-[#FBFBFB] dark:bg-[#111A19] border border-[#E0E0E0] dark:border-[#1F2A2B] rounded-lg px-4 py-3 text-[14px] text-[#333333] dark:text-[#EAEAEA] placeholder:text-[#999999] focus:outline-none focus:border-primary-teal dark:focus:border-primary-teal transition-colors font-inter disabled:opacity-50"
                     />
