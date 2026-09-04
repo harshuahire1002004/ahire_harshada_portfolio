@@ -22,20 +22,14 @@ export async function POST(request: Request) {
 
     const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
 
-    // If access key is not set yet, log to console and return success
+    // If access key is not set, return error so the admin knows it is missing in Vercel
     if (!accessKey || accessKey.trim() === "") {
-      console.log("=== Contact Message Received (Console Mode) ===");
-      console.log(`From: ${name} <${email}>`);
-      console.log(`Message: ${message}`);
-      console.log("Tip: Add WEB3FORMS_ACCESS_KEY in .env.local to receive direct emails in your inbox.");
-      console.log("================================================");
-
+      console.error("WEB3FORMS_ACCESS_KEY environment variable is missing on this server/Vercel.");
       return NextResponse.json(
         { 
-          success: true, 
-          message: "Message received successfully!" 
+          error: "Email service is not configured. Please add WEB3FORMS_ACCESS_KEY to your Vercel Environment Variables." 
         },
-        { status: 200 }
+        { status: 500 }
       );
     }
 
