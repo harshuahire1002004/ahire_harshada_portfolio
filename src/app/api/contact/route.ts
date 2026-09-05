@@ -20,25 +20,29 @@ export async function POST(request: Request) {
       );
     }
 
-    const accessKey = process.env.WEB3FORMS_ACCESS_KEY || "c2505b75-fe87-4e20-bd97-81e924d5cec9";
+    const accessKey =
+      process.env.WEB3FORMS_ACCESS_KEY ||
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+      "c2505b75-fe87-4e20-bd97-81e924d5cec9";
 
     // If access key is not set, return error so the admin knows it is missing in Vercel
     if (!accessKey || accessKey.trim() === "") {
-      console.error("WEB3FORMS_ACCESS_KEY environment variable is missing on this server/Vercel.");
+      console.error("WEB3FORMS_ACCESS_KEY environment variable is missing.");
       return NextResponse.json(
         { 
-          error: "Email service is not configured. Please add WEB3FORMS_ACCESS_KEY to your Vercel Environment Variables." 
+          error: "Email service is not configured. Please add WEB3FORMS_ACCESS_KEY to your environment variables." 
         },
         { status: 500 }
       );
     }
 
-    // Forward to Web3Forms API to deliver directly to ahireharshada495@gmail.com
+    // Forward to Web3Forms API to deliver directly to inbox
     const web3Response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        "User-Agent": "Harshada-Portfolio-Client/1.0"
       },
       body: JSON.stringify({
         access_key: accessKey.trim(),
@@ -46,11 +50,17 @@ export async function POST(request: Request) {
         email: email,
         message: message,
         subject: `New Portfolio Inquiry from ${name}`,
-        from_name: "Harshada Ahire Portfolio",
+        from_name: `${name} (Harshada Portfolio)`,
       }),
     });
 
-    const data = await web3Response.json();
+    const responseText = await web3Response.text();
+    let data: any = {};
+    try {
+      data = JSON.parse(responseText);
+    } catch {
+      data = { message: responseText };
+    }
 
     if (web3Response.ok && data.success) {
       return NextResponse.json(
@@ -61,13 +71,13 @@ export async function POST(request: Request) {
       console.error("Web3Forms error response:", data);
       return NextResponse.json(
         { error: data.message || "Failed to deliver email. Please try again." },
-        { status: 500 }
+        { status: web3Response.status >= 400 && web3Response.status < 500 ? web3Response.status : 500 }
       );
     }
   } catch (error) {
     console.error("Error in contact API route:", error);
     return NextResponse.json(
-      { error: "Internal server error. Please try again later." },
+      { error: "Failed to send message. Please try again later or email directly." },
       { status: 500 }
     );
   }

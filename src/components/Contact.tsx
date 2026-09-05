@@ -44,12 +44,24 @@ export default function Contact() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
+      const accessKey =
+        process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
+        "c2505b75-fe87-4e20-bd97-81e924d5cec9";
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          Accept: "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+          subject: `New Portfolio Message from ${formData.name.trim()}`,
+          from_name: `${formData.name.trim()} (Harshada Portfolio)`
+        })
       });
 
       const data = await response.json();
@@ -59,7 +71,7 @@ export default function Contact() {
         setFormData({ name: "", email: "", message: "" });
       } else {
         setStatus("error");
-        setErrorMessage(data.error || "Failed to send message. Please try again.");
+        setErrorMessage(data.message || data.error || "Failed to send message. Please try again.");
       }
     } catch (err) {
       // Fallback: If network fails, prompt direct email link
